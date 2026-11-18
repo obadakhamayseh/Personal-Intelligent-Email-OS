@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f6f8fc;
+  color: #1f1f1f;
+  font-family: "Cairo", "Inter", -apple-system, BlinkMacSystemFont, "Google Sans",
+    Roboto, "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d2d7df;
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9aa0a6;
+}
+
+/* Keyframe Animations for Page, Section, Modal & Staggered Row Transitions */
+@keyframes viewFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.994);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes rowStaggerEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes drawerSlideInRtl {
+  0% {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawerSlideInLtr {
+  0% {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes BackdropFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-view-enter {
+  animation: viewFadeSlideUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-row-enter {
+  opacity: 0;
+  animation: rowStaggerEnter 0.24s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-modal-enter {
+  animation: modalZoomIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-drawer-rtl {
+  animation: drawerSlideInRtl 0.26s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-drawer-ltr {
+  animation: drawerSlideInLtr 0.26s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-backdrop {
+  animation: BackdropFade 0.2s ease-out forwards;
+}
+
+/* Smooth hover lift for cards & email rows */
+.gmail-row-smooth {
+  transition: background-color 0.16s ease, transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.gmail-row-smooth:hover {
+  box-shadow: 0 2px 8px rgba(11, 87, 208, 0.08);
+  transform: translateY(-1px);
+}
+
+.smooth-pill {
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.smooth-pill:active {
+  transform: scale(0.96);
+}
+
+/* Authentic Google Gmail Dark Theme */
+html.dark-theme body,
+html.dark-theme .bg-\[\#F6F8FC\] {
+  background-color: #111318 !important;
+  color: #e3e3e3 !important;
+}
+
+html.dark-theme .bg-white {
+  background-color: #1e222a !important;
+  color: #e3e3e3 !important;
+}
+
+html.dark-theme .bg-\[\#F2F6FC\]\/70,
+html.dark-theme .bg-\[\#F2F6FC\],
+html.dark-theme .bg-gray-50 {
+  background-color: #171a21 !important;
+  color: #b8bec9 !important;
+}
+
+html.dark-theme .bg-\[\#EAF1FB\],
+html.dark-theme .bg-\[\#EAF1FB\]\/90 {
+  background-color: #262b36 !important;
+  color: #d3e3fd !important;
+}
+
+html.dark-theme .bg-\[\#D3E3FD\] {
+  background-color: #004a77 !important;
+  color: #c2e7ff !important;
+}
+
+html.dark-theme .text-\[\#1F1F1F\] {
+  color: #f1f3f4 !important;
+}
+
+html.dark-theme .text-\[\#444746\],
+html.dark-theme .text-gray-600,
+html.dark-theme .text-gray-700 {
+  color: #9aa0a6 !important;
+}
+
+html.dark-theme .text-\[\#041E49\] {
+  color: #c2e7ff !important;
+}
+
+html.dark-theme .border-\[\#E1E5EA\],
+html.dark-theme .border-gray-200,
+html.dark-theme .border-gray-100,
+html.dark-theme .divide-\[\#E1E5EA\] > :not([hidden]) ~ :not([hidden]),
+html.dark-theme .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #2e3440 !important;
+}
